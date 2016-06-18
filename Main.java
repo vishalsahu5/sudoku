@@ -1,4 +1,4 @@
-public class Main 
+public class Main
 {
 
 	public static void main(String args[])
@@ -6,6 +6,10 @@ public class Main
 		int grid[][] = new int[9][9];
 		int i = 0;   //Variable to be used only for the iteration purposes.
 		int j = 0;
+		for(i = 0; i<9; i++)
+			for(j=0; j<9; j++)
+				grid[i][j] = -1;
+		
 		for(i = 0; i<9; i++)
 		{
 			j=0;
@@ -28,9 +32,9 @@ public class Main
 						break;
 					}
 					//box check
-					for(int x = (j/3)*3; x < ((j/3)*3)+3; x++)
-						for(int y = (i/3)*3; y < ((i/3)*3)+3; y++)
-							if(key == grid[x][y])
+					for(int y = (i/3)*3; y < ((i/3)*3)+3; y++)
+						for(int x = (j/3)*3; x < ((j/3)*3)+3; x++)
+							if(key == grid[y][x])
 							{
 								flag = 1;
 								break;
